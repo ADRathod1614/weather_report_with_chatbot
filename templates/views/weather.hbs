@@ -26,7 +26,7 @@
     <title>Weather Web App</title>
   </head>
   <body>
-    
+
     <div class="container-fluid main_menu">
         <div class="row">
           <div class="col-md-10 col-12 mx-auto">
@@ -55,20 +55,8 @@
       </div>
       </div>
       </div>
-   
-    <div class="container-fluid main_header">
-      <div class="row">
-        <div class="col-md-10 col-12 mx-auto">
-          <div class="row">
-            <div class=" main_header_left1">
-            </div>
-            <div class=" main_header_right1">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- main content -->
+  <div class="image">
     <div class="wrapper">
       <header><i class="bx bx-left-arrow-alt"></i>Weather App</header>
       <section class="input-part">
@@ -116,12 +104,43 @@
         </div>
       </section>
     </div>
+  </div>
  
     <!--=========== SCRIPTS ===========-->
+
+   <footer className="footer">
+      <Container>
+        <Row>
+            <div className="logo footer__logo">
+
+            </div>
+            <div class="container">
+            <div class="box">
+              <h5 class="footer__link-title mb-4">Head Office</h5>
+              <p class="office__info"> Aurangabad, Maharashtra, India</p>
+              <p class="office__info">Phone: +91 7588580299</p>
+              <p class="office__info">Email: abhay7028rathod@gmail.com</p>
+            </div>
+        
+            <div class="box">
+              <h5 class="footer__link-title">Newsletter</h5>
+              <p class="section__description">Subscribe our newsletter</p>
+              <div class="newsletter">
+                <input type="email" placeholder="Email" />
+                <span>
+                  <i class="ri-send-plane-line"></i>
+                </span>
+              </div>       
+
+            </div>
+            </div>
+           <p class="left"> &copy; 2023 My Website. All rights reserved.</p>
+        </Row>
+      </Container>
+    </footer>
+  
+  </body>
+  
+</html>
     <script src="js/script.js"></script>
     <script src="js/api_key.js"></script>
-    <footer class="footer">
-      <p> created with HTML,CSS,JavaScript,Node js,Express js </p>
-    </footer>
-  </body>
-</html>

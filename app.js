@@ -44,17 +44,18 @@ app.post("/login",async(req,res)=>{
         const password=req.body.password;
 
        const Username=await Register.findOne({username:username});
-     //  const isMatch = await bcrypt.compare(password,Username.password)
-    // if(isMatch){
-    if(Username.password===password){
-        res.status(201).render('index');
-     }else{
+    const isMatch = await bcrypt.compare(password,Username.password)
+    if(isMatch){ 
+            res.status(201).render('index');
+         }else{
         res.send('password is not matching')
-     }
+        }
     }catch(e){
         res.status(404).send("invalid");
     }
-});
+}
+
+);
 //create a new user in database
 
 app.get("/registration",(req,res)=>{
@@ -64,6 +65,8 @@ app.post("/registration", async(req,res)=>{
     try{
         const password=req.body.password;
         const c_password=req.body.c_password;
+        console.log(req.body.password);
+        // console.log(req.body.c_password);
         if(password === c_password){
             const employee=new Register({
                 name:req.body.name,
@@ -72,10 +75,9 @@ app.post("/registration", async(req,res)=>{
                 password:password,
                 c_password:c_password,
             })
-            //password hash
 
-            const data=await employee.save();
-            res.status(202).render('index')
+            await employee.save();
+            res.status(202).render('login')
         }
         else{
             res.send("password is not matching")

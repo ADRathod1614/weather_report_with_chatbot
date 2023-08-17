@@ -23,12 +23,10 @@ const user=new mongoose.Schema({
         require:true
     },
 })
-user.pre("save", async function(next){
+user.pre('save', async function(next){
     if(this.isModified("password")){
-        console.log(`current password is ${this.password}`);
         this.password = await bcrypt.hash(this.password,10)
-        console.log(`hash password is ${this.password}`);
-        this.c_password=undefined;
+        this.c_password= await bcrypt.hash(this.c_password,10);
     }
      next();
 })

@@ -1,12 +1,7 @@
 const mongoose=require('mongoose');
 
+const DB='mongodb+srv://abhay7028rathod:test1614@cluster0.wknxbr2.mongodb.net/login?retryWrites=true&w=majority';
 
-
-mongoose.connect("mongodb://127.0.0.1:27017/Login_data",{
-    useUnifiedTopology:true,
-    useNewUrlParser:true,
-}).then(()=>{
-    console.log("connected");
-}).catch((e)=>{
-    console.log(e)
-});
+mongoose.connect(DB).then(()=>{
+    console.log('connection successful');
+}).catch((err)=>console.log(err));
